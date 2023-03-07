@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alternar botão</title>
+	<style>
+        body {
+
+            margin: 0px;
+            padding: 0px;   
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+		.theme_switcher {
+            display: flex;
+			width: 150px;
+			height: 60px;
+			background-color: gray;
+			border-radius: 20px;
+			cursor: pointer;
+            align-items: center;
+		}
+
+		.theme_switcher .circle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			left: 5px;
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			border-radius: 50%;
+			transition: left 0.3s ease-in-out;
+            
+		}
+	</style>
+</head>
+<body>
+	<div class="theme_switcher">
+		<div class="circle"></div>
+	</div>
+
+	<script defer>
+		let theme_switcher = document.querySelector(".theme_switcher");
+		let circle = document.querySelector(".circle");
+        let body = document.querySelector("body")
+		let state = false;
+
+		circle.addEventListener("click", function() {
+			if (state) {
+				circle.style.left = "5px";
+				body.style.backgroundColor = "black";
+			} else {
+				circle.style.left = "100px";
+				body.style.backgroundColor = "white";
+			}
+
+			state = !state;
+		});
+	</script>
+</body>
+</html>
